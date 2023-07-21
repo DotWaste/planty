@@ -6,18 +6,30 @@ body * {
 /* On applique un gris plus clair sur les paragraphes */
 p {
    color: #000;
+   text-align: center;
+   margin: 50%;
+}
+/* Intro */
+.intro {
+   margin-left: 25%;
+   margin-right: 25%;
 }
 
-/*Call to action et binteractions*/
+
+/*Call to action et interactions*/
 .cta {
-    display: flex;
-    width: 198px;
-    height: 55px;
-    padding: 9px 57px 9px 56px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 5px;
-    margin-top:50px;
-    background: #E0B9B4;
+   margin-top: 25px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-shrink: 0;
+   border-radius: 5px;
+   background: #E0B9B4;
+}
+
+.profile {
+   object-fit: contain;
+   width: 167px;
+   height: 167px;
+   border-radius: 25%;
 }
