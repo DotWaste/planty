@@ -15,6 +15,10 @@ p {
    margin-right: 25%;
 }
 
+/* Menu et header */
+.wrap:visited, .wrap:active {
+   font-weight: bold;
+}
 
 /*Call to action et interactions*/
 .cta {
