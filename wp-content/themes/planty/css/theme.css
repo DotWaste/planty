@@ -20,6 +20,13 @@ p {
    font-weight: bold;
 }
 
+/*footer*/ 
+.site-footer {
+   text-align: center;
+   background-color: white;
+   height:60px;
+}
+
 /*Call to action et interactions*/
 .cta {
    margin-top: 25px;
@@ -31,9 +38,13 @@ p {
    background: #E0B9B4;
 }
 
-.profile {
-   object-fit: contain;
-   width: 167px;
-   height: 167px;
+.wp-block-column {
+   align-content: center;
+}
+
+.is-style-rounded {
+   object-fit: cover;
+   max-width: 167px;
+   max-height: 167px;
    border-radius: 25%;
 }
