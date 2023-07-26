@@ -1,50 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap');
-/* Import de la font Syne depuis Google Fonts et on l'applique sur tous les éléments de la page */
-body * {
-   font-family: 'Syne', sans-serif;
+/*ENSEMBLE CSS*/
+.page-title {
+    display: none;
 }
-/* On applique un gris plus clair sur les paragraphes */
-p {
-   color: #000;
-   text-align: center;
-   margin: 50%;
-}
-/* Intro */
-.intro {
-   margin-left: 25%;
-   margin-right: 25%;
+.bouton-envoi {
+	margin-left: 50%;
+	margin-right: 50%;
 }
 
-/* Menu et header */
-.wrap:visited, .wrap:active {
-   font-weight: bold;
+/*HOME*/
+.gouts-gallery {
+    max-width: 800px;
+    max-height: 800px;
+    row-gap: 40px;
+    padding-inline: 40px;
 }
 
-/*footer*/ 
-.site-footer {
-   text-align: center;
-   background-color: white;
-   height:60px;
+.gouts {
+    max-height: 263px;
+    max-width: 394px;
+    margin-inline: 40px;
 }
 
-/*Call to action et interactions*/
-.cta {
-   margin-top: 25px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-shrink: 0;
-   border-radius: 5px;
-   background: #E0B9B4;
+.energie {
+    margin: 0px;
 }
 
-.wp-block-column {
-   align-content: center;
+/*FOOTER*/ 
+
+
+/*FORMULAIRE COMMANDE*/
+#form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
 }
 
-.is-style-rounded {
-   object-fit: cover;
-   max-width: 167px;
-   max-height: 167px;
-   border-radius: 25%;
+.order-container {
+    align-items:center;   
+    padding:10px 5px;
+}
+
+.champ{
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+.input {
+    color: white;
+}
+
+.col {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+.separation {
+    width: 1px;
+    border: 1px solid white;
+    
+}
+
+.commander{
+    margin-top: 25px;
+    background-color: #E0B9B4;  
 }
