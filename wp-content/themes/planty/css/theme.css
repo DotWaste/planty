@@ -24,12 +24,32 @@ body * {
     padding-inline: 40px;
 }
 
+.gouts-row {
+    max-height:263px;
+}
+
 .gouts {
     max-height: 263px;
     max-width: 394px;
     margin-inline: 40px;
 }
 
+/*IMAGES*/
+.fraise {
+    background-image: 'upload/2023/07/FRAISE.jpg';
+}
+
+.pamplemousse {
+
+}
+
+.framboise {
+
+}
+
+.citron {
+
+}
 /*SVG*/
 svg {
     width: 100%;
@@ -55,7 +75,6 @@ svg {
     position: absolute;
     bottom: 0;
     width:100%;
-    height: auto;
     z-index: -5;
 }
 
@@ -68,10 +87,17 @@ svg {
 
 .svg-content p {
     margin-left: 40%;
-    margin-right: 40%;
-    
+    margin-right: 40%;  
 }
 
+.feuille {
+    position: absolute;
+    max-width: 192px;
+    max-height: 220px;
+    right: 58px;
+    z-index: -4;
+    bottom:7px;
+}
 /*FOOTER*/ 
 
 
