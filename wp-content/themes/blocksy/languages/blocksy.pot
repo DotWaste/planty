@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-07-19 20:00+0000\n"
+"POT-Creation-Date: 2023-07-27 13:28+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -191,21 +191,21 @@ msgid ""
 msgstr ""
 
 #. translators: 1: span open 2: Name of current post. Only visible to screen readers 3: span closing
-#: inc/template-tags.php:95, inc/single/content-helpers.php:225
+#: inc/template-tags.php:108, inc/single/content-helpers.php:225
 msgid "Continue reading%1$s \"%2$s\"%3$s"
 msgstr ""
 
 #. translators: post title
-#: inc/template-tags.php:275
+#: inc/template-tags.php:288
 msgid "Previous %s"
 msgstr ""
 
 #. translators: post title
-#: inc/template-tags.php:300
+#: inc/template-tags.php:313
 msgid "Next %s"
 msgstr ""
 
-#: inc/template-tags.php:428, inc/options/single-elements/related-posts.php:19,
+#: inc/template-tags.php:441, inc/options/single-elements/related-posts.php:19,
 #: inc/options/single-elements/related-posts.php:86
 msgid "Related Posts"
 msgstr ""

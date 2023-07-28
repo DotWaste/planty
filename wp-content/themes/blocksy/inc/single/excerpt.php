@@ -2,12 +2,17 @@
 
 defined('ABSPATH') || die("Don't run this file directly!");
 
-add_filter(
-	'excerpt_length',
-	function ($length) {
-		return 100;
+if (! function_exists('blocksy_excerpt_length')) {
+	function blocksy_excerpt_length($length) {
+		return 300;
 	}
-);
+}
+
+if (! function_exists('blocksy_excerpt_more')) {
+	function blocksy_excerpt_more($more) {
+		return '…';
+	}
+}
 
 if (! function_exists('blocksy_trim_excerpt')) {
 	function blocksy_trim_excerpt($excerpt, $length) {
@@ -48,14 +53,17 @@ if (! function_exists('blocksy_trim_excerpt')) {
 
 		$text = apply_filters('blocksy:excerpt:output', $text);
 
+		add_filter(
+			'excerpt_more',
+			'blocksy_excerpt_more',
+			0
+		);
 		echo apply_filters('the_excerpt', $text);
+		remove_filter(
+			'excerpt_more',
+			'blocksy_excerpt_more',
+			0
+		);
 	}
 }
-
-add_filter(
-	'excerpt_more',
-	function () {
-		return '…';
-	}
-);
 

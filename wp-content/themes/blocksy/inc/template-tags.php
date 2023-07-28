@@ -54,9 +54,22 @@ if (! function_exists('blocksy_entry_excerpt')) {
 				'custom_exceprt' => '' // for custom only
 			]
 		);
+
+		add_filter(
+			'excerpt_length',
+			'blocksy_excerpt_length',
+			0
+		);
+
 		ob_start();
 		$post_excerpt = get_the_excerpt($args['post_id']);
 		$excerpt_additions = ob_get_clean();
+
+		remove_filter(
+			'excerpt_length',
+			'blocksy_excerpt_length',
+			0
+		);
 
 		if ($args['source'] === 'excerpt' && empty(trim($post_excerpt))) {
 			return '';

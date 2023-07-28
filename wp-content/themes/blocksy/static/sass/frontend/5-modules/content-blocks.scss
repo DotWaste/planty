@@ -13,3 +13,8 @@
 [data-block*="bottom"] {
 	bottom: calc(var(--block-offset, 0px) + var(--frame-size, 0px));
 }
+
+
+[data-block-structure="custom"] {
+	width: 100%;
+}
