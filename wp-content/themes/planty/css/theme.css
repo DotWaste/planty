@@ -102,6 +102,27 @@ svg {
 
 
 /*FORMULAIRE COMMANDE*/
+.quantite {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    line-height: 30px;
+    color: black;
+    background-color: white;
+    background-clip: padding-box;
+    border: 1px solid #DC9F96;
+    appearance: none;
+}
+
+.page-id-29{ 
+    background-color: #3B8E46;
+}
+
 #form {
     display: flex;
     flex-wrap: wrap;
@@ -123,8 +144,14 @@ svg {
     margin-bottom: 30px;
     border-radius: 10px;
 }
-.input {
-    color: white;
+
+#nom,
+#prenom,
+#email,
+#adresse,
+#code-postal,
+#ville {
+    background-color: #ffffff;
 }
 
 .col {
