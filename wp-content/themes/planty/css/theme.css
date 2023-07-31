@@ -9,6 +9,14 @@ body * {
     display: none;
 }
 
+/*header*/
+.menu-item-176 {
+    background-color: #DC9F96;    
+}
+
+.menu-item-176 a{
+    color: white!important;
+}
 
 /*HOME*/
 .div-title {
@@ -79,15 +87,14 @@ svg {
 }
 
 .svg-content {
-    justify-items: center;
     text-align: center;
     position: relative;
     z-index: 1;
 }
 
 .svg-content p {
-    margin-left: 40%;
-    margin-right: 40%;  
+    max-width: 30%;
+    margin: auto;
 }
 
 .feuille {
