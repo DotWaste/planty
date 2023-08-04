@@ -20,6 +20,12 @@
 
 	<?php wp_head(); ?>
 	<?php do_action('blocksy:head:end') ?>
+	<?php
+ 		if ( !is_user_logged_in() ) {
+      		$output="<style>.menu-item-507 {display: none !important;}</style>";
+			echo $output;
+    	}
+    ?>
 </head>
 
 <?php
