@@ -9,6 +9,10 @@ body * {
     display: none;
 }
 
+.ct-container-full {
+    padding-bottom: 0;
+}
+
 /*header*/
 .menu-item-827 {
     background-color: #DC9F96;    
@@ -25,6 +29,8 @@ body * {
     fill: #3B8E46;
 }
 
+
+
 .gouts-gallery {
     display: block;
     columns: 2;
@@ -40,6 +46,10 @@ body * {
     height: 263px;
     width: 394px;
     margin-inline: 40px;
+}
+
+.gouts a{
+    link
 }
 
 .avis {
@@ -124,7 +134,20 @@ svg {
     bottom:7px;
 }
 /*FOOTER*/ 
+.ftr-bg {
+    text-align: center;
+    
+}
 
+.page-id-678 #ftr-img {
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: -60px;
+}
+
+.ftr-img {
+    background-color: none;
+}
 
 /*FORMULAIRE COMMANDE*/
 .updown-grp {
