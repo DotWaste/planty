@@ -18,7 +18,7 @@ body * {
     background-color: #DC9F96;    
 }
 
-.menu-item-176 a{
+.menu-item-827 a{
     color: white!important;
 }
 
@@ -28,8 +28,6 @@ body * {
     font-weight: bold;
     fill: #3B8E46;
 }
-
-
 
 .gouts-gallery {
     display: block;
@@ -49,7 +47,7 @@ body * {
 }
 
 .gouts a{
-    link
+    
 }
 
 .avis {
@@ -75,12 +73,13 @@ figcaption {
     align-self: center;
     justify-self:center;
 }
-/*SVG*/
 
-svg {
+/*SVG*/
+/*svg {
     width: 100%;
     height:100%;
-}
+}*/
+
 .cont {
     position: relative;
     max-width: 1440px;
@@ -143,6 +142,10 @@ svg {
     background-color: #ffffff;
     text-align: center;
     margin-top: -60px;
+}
+
+.page-id-796 #ftr-img {
+    display: none;
 }
 
 .ftr-img {
@@ -238,17 +241,24 @@ svg {
     background-color: #ffffff;
 }
 
-.col {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
+.col1 {
+    float: inline-end;
+    border-right: 2px solid #ffffff;
 }
 
 .separation {
-    height: 280px;
+    display: flex; 
+    flex-direction: row;
+    height: 600px;
     width: 1px;
     border: 1px solid white;
-    margin: 0;
+    margin-left: 50%;
+    overflow: visible;
+}
+
+.titre-form {
+    color: #ffffff;
+    text-align: left;
 }
 
 .commander{
