@@ -135,7 +135,8 @@ figcaption {
 /*FOOTER*/ 
 .ftr-bg {
     text-align: center;
-    
+    align-self:center;
+    width: 100%;
 }
 
 .page-id-678 #ftr-img {
