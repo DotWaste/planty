@@ -19,7 +19,13 @@ function theme_enqueue_styles(){
         } else { 
             $args['menu'] = 'Menu-Principal';
         }
-        } 
             return $args;
-
+        } ;
     add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
+
+    /*add_action('logged_out_menu', 'menu_remove_item');
+    function menu_remove_item() {
+        if ( !is_user_logged_in() ) {
+            remove_menu_page('admin.php');
+        }
+    };*/
