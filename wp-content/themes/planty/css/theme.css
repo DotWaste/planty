@@ -150,37 +150,22 @@ figcaption {
 }
 
 /*FORMULAIRE COMMANDE*/
+/*Couleur arrière-plan*/
 .page-id-796 { 
     background-color: #3B8E46;
 }
-
+/*Alignement bouton d'envoi*/
 .forminator-row-last {
     text-align: center;
 }
-
-.forminator-field {
-    background-color: rgb(255, 255, 255, 0);
-}
-
-.titre-col-order{
-    color: #ffffff;
-    text-align: left;
-    font-size: 36px;
-}
-
-.forminator-input {
-    border-radius: 5px!important;
-    height:70px!important;
-    background-color: white;
-}
-
+/*Style bouton formulaire*/
 .forminator-button-submit {
     border-radius: 5px!important;
     width: 195px!important;
     height: 55px!important;
     text-align:center;
 }
-
+/*Style bouton OK*/ 
 .ok-btn{
     width: 70px;
     height:70px;
@@ -190,17 +175,17 @@ figcaption {
     border-radius: 5px;
     text-align: center;
 }
-
-.go-btn {
-    border-radius:5px;
-    text-align: center;
-
+/*Titre de la section du formulaire*/
+.titre-col-order{
+    color: #ffffff;
+    text-align: left;
+    font-size: 36px;
 }
-
-.order-form-field {
-    height:50px;
-    border-radius: 5px;
-    margin-bottom: 50px;
+/*Input du formulaire*/
+.forminator-input {
+    border-radius: 5px!important;
+    height:70px!important;
+    background-color: white;
 }
 
 /*CONTACT*/
@@ -212,20 +197,8 @@ figcaption {
     width: 100%;
 }
 
-.order img {
-    height: 300px;
-}
 
-.order-container {
-    align-items:center;   
-    padding:10px 5px;
-}
 
-.champ{
-    color: white;
-    margin-bottom: 30px;
-    border-radius: 10px;
-}
 
 #nom,
 #prenom,
@@ -236,18 +209,17 @@ figcaption {
     background-color: #ffffff;
 }
 
-.col1 {
-    float: inline-end;
-    border-right: 2px solid #ffffff;
+#html-12 {
+    max-width:5px!important;
 }
 
 .separation {
     display: flex; 
     flex-direction: row;
     height: 600px;
-    width: 1px;
+    max-width: 1px;
     border: 1px solid white;
-    margin-left: 50%;
+    margin: auto;
     overflow: visible;
 }
 
