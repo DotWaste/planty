@@ -56,13 +56,13 @@ if (! function_exists('blocksy_trim_excerpt')) {
 		add_filter(
 			'excerpt_more',
 			'blocksy_excerpt_more',
-			0
+			PHP_INT_MAX
 		);
 		echo apply_filters('the_excerpt', $text);
 		remove_filter(
 			'excerpt_more',
 			'blocksy_excerpt_more',
-			0
+			PHP_INT_MAX
 		);
 	}
 }

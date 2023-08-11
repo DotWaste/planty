@@ -56,7 +56,7 @@ add_action(
 		);
 
 		$deps = apply_filters('blocksy-options-scripts-dependencies', [
-			'underscore',
+			// 'underscore',
 			'react',
 			'react-dom',
 			'wp-element',
@@ -83,6 +83,7 @@ add_action(
 					$current_screen->is_block_editor
 				)
 			) {
+				$deps[] = 'underscore';
 				wp_enqueue_editor();
 			}
 

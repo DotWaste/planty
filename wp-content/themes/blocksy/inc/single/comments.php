@@ -86,6 +86,12 @@ add_filter('comment_form_defaults', function ($defaults) {
 add_filter(
 	'comment_form_fields',
 	function ($fields) {
+		$prefix = blocksy_manager()->screen->get_prefix();
+
+		if ($prefix === 'product') {
+			return $fields;
+		}
+
 		if (strpos($fields['comment'], 'rating') !== false) {
 			return $fields;
 		}
@@ -104,7 +110,6 @@ add_filter(
 		$req = get_option('require_name_email');
 		$aria_req = ($req ? " required='required'" : '');
 
-		$prefix = blocksy_manager()->screen->get_prefix();
 		$has_website_field = get_theme_mod(
 			$prefix . '_has_comments_website',
 			'yes'

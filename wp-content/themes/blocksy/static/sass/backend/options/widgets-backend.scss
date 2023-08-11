@@ -1,9 +1,8 @@
-// block widgets
+// block widgets in customizer
 .ct-option-widget-area {
 	margin-top: 15px;
 
-	.editor-styles-wrapper {
-		padding: 0;
+	.block-editor-writing-flow {
 		background: transparent;
 	}
 }
@@ -33,6 +32,9 @@
 		background: inherit;
 	}
 }
+
+
+
 
 
 // classic widgets
@@ -79,7 +81,7 @@
 }
 
 // classic widgets inside block editor
-.wp-block-legacy-widget__edit-form {
+[class*="wp-block-legacy-widget__edit-form"] {
 
 	.ct-options-panel {
 

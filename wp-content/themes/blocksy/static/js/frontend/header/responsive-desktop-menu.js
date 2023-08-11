@@ -27,6 +27,7 @@ const maybeCreateMoreItemsFor = (nav, onDone) => {
 	moreContainer.classList.add('more-items-container')
 	moreContainer.classList.add('animated-submenu')
 	moreContainer.classList.add('menu-item')
+	moreContainer.role = 'none'
 
 	moreContainer.insertAdjacentHTML(
 		'afterbegin',

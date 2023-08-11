@@ -65,6 +65,12 @@ export const getSingleContentVariablesFor = () => {
 	}
 
 	return {
+		...handleBackgroundOptionFor({
+			id: `${prefix}_background`,
+			selector: `[data-prefix="${prefix}"]`,
+			responsive: true,
+		}),
+
 		...makeVariablesWithCondition(
 			`${prefix}_content_style`,
 			{
@@ -152,7 +158,7 @@ export const getSingleContentVariablesFor = () => {
 						prefix
 					)}`,
 					type: 'spacing',
-					variable: 'border-radius',
+					variable: 'boxed-content-border-radius',
 					responsive: true,
 				},
 

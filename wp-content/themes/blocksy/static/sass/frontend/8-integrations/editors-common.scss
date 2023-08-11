@@ -24,8 +24,8 @@
 	
 	box-shadow: var(--has-boxed, var(--box-shadow));
 	border: var(--has-boxed, var(--boxed-content-border));
-	border-radius: var(--has-boxed, var(--border-radius));
 	padding: var(--has-boxed, var(--boxed-content-spacing));
+	border-radius: var(--has-boxed, var(--boxed-content-border-radius));
 
 	margin-left: var(--has-boxed-structure, auto);
 	margin-right: var(--has-boxed-structure, auto);

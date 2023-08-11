@@ -58,7 +58,7 @@ if (! function_exists('blocksy_entry_excerpt')) {
 		add_filter(
 			'excerpt_length',
 			'blocksy_excerpt_length',
-			0
+			PHP_INT_MAX
 		);
 
 		ob_start();
@@ -68,7 +68,7 @@ if (! function_exists('blocksy_entry_excerpt')) {
 		remove_filter(
 			'excerpt_length',
 			'blocksy_excerpt_length',
-			0
+			PHP_INT_MAX
 		);
 
 		if ($args['source'] === 'excerpt' && empty(trim($post_excerpt))) {

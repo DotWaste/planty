@@ -8,8 +8,6 @@
  */
 
 class Blocksy_Dynamic_Css {
-	private $has_enqueued_backend_styles = false;
-
 	public function get_css_version() {
 		return 5;
 	}
@@ -84,11 +82,18 @@ class Blocksy_Dynamic_Css {
 				return;
 			}
 
-			if ($this->has_enqueued_backend_styles) {
+			if (
+				function_exists('get_current_screen')
+				&&
+				get_current_screen()
+				&&
+				get_current_screen()->is_block_editor()
+				&&
+				get_current_screen()->base === 'post'
+			) {
 				return;
 			}
 
-			$this->has_enqueued_backend_styles = true;
 			$this->load_backend_dynamic_css();
 		});
 	}
@@ -392,13 +397,18 @@ class Blocksy_Dynamic_Css {
 		return $global_styles_descriptor;
 	}
 
-	public function load_backend_dynamic_css() {
+	public function load_backend_dynamic_css($args = []) {
+		$args = wp_parse_args($args, [
+			'echo' => true,
+			'filename' => 'admin-global'
+		]);
+
 		$css = new Blocksy_Css_Injector();
 		$tablet_css = new Blocksy_Css_Injector();
 		$mobile_css = new Blocksy_Css_Injector();
 
 		blocksy_theme_get_dynamic_styles([
-			'name' => 'admin-global',
+			'name' => $args['filename'],
 			'css' => $css,
 			'tablet_css' => $tablet_css,
 			'mobile_css' => $mobile_css,
@@ -416,13 +426,6 @@ class Blocksy_Dynamic_Css {
 
 		$css = $all_global_css;
 
-		$m = new Blocksy_Fonts_Manager();
-		$maybe_google_fonts_url = $m->load_editor_fonts();
-
-		if (! empty($maybe_google_fonts_url)) {
-			$css = "@import url('" . $maybe_google_fonts_url . "');\n" . $css;
-		}
-
 		if (! empty($all_tablet_css)) {
 			$css .= "\n@media (max-width: 800px) {\n";
 			$css .= $all_tablet_css;
@@ -435,9 +438,13 @@ class Blocksy_Dynamic_Css {
 			$css .= "}\n";
 		}
 
-		echo '<style id="ct-main-styles-inline-css">';
-		echo $css;
-		echo "</style>\n";
+		if ($args['echo']) {
+			echo '<style id="ct-main-styles-inline-css">';
+			echo $css;
+			echo "</style>\n";
+		}
+
+		return $css;
 	}
 }
 

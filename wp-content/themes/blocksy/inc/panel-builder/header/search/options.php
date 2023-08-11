@@ -527,7 +527,6 @@ $options = [
 				'label' => __( 'Input Font Color', 'blocksy' ),
 				'type'  => 'ct-color-picker',
 				'design' => 'inline',
-				'divider' => 'bottom',
 				'setting' => [ 'transport' => 'postMessage' ],
 
 				'value' => [
@@ -553,6 +552,36 @@ $options = [
 				],
 			],
 
+			'searchHeaderInputBorderColor' => [
+				'label' => __( 'Input Border Color', 'blocksy' ),
+				'type'  => 'ct-color-picker',
+				'design' => 'inline',
+				'divider' => 'bottom',
+				'setting' => [ 'transport' => 'postMessage' ],
+
+				'value' => [
+					'default' => [
+						'color' => 'rgba(255, 255, 255, 0.2)',
+					],
+
+					'focus' => [
+						'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+					],
+				],
+
+				'pickers' => [
+					[
+						'title' => __( 'Initial', 'blocksy' ),
+						'id' => 'default',
+					],
+
+					[
+						'title' => __( 'Focus', 'blocksy' ),
+						'id' => 'focus',
+						'inherit' => 'var(--form-field-border-focus-color)'
+					],
+				],
+			],
 
 			'search_button_icon_color' => [
 				'label' => __( 'Search Icon Color', 'blocksy' ),

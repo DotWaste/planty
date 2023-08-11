@@ -1,3 +1,5 @@
+$sides_spacing: 20px;
+
 @import 'general';
 @import 'spacing';
 @import 'colors';
@@ -6,6 +8,7 @@
 @import 'inner-container';
 
 // blocks
+@import 'post-title';
 @import 'drop-cap';
 @import 'block-code';
 @import 'block-quote';
@@ -15,6 +18,9 @@
 @import 'block-search';
 @import 'block-wp-forms';
 @import 'block-separator';
+
+// states
+@import 'has-background';
 
 // builders
 @import 'block-builders';

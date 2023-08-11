@@ -307,6 +307,30 @@ blocksy_output_colors([
 	],
 ]);
 
+blocksy_output_colors([
+	'value' => blocksy_akg('searchHeaderInputBorderColor', $atts),
+	'default' => [
+		'default' => [ 'color' => 'rgba(255, 255, 255, 0.2)' ],
+		'focus' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+	],
+	'css' => $css,
+	'variables' => [
+		'default' => [
+			'selector' => blocksy_assemble_selector(
+				$root_selector[0] . ' #search-modal input'
+			),
+			'variable' => 'form-field-border-initial-color'
+		],
+
+		'focus' => [
+			'selector' => blocksy_assemble_selector(
+				$root_selector[0] . ' #search-modal input'
+			),
+			'variable' => 'form-field-border-focus-color'
+		],
+	],
+]);
+
 // Search button colors
 blocksy_output_colors([
 	'value' => blocksy_akg('search_button_icon_color', $atts),

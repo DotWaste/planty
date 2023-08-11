@@ -94,13 +94,15 @@ add_action($action_to_hook, function () {
 
 add_action(
 	'woocommerce_single_product_summary',
-	function () {
-		if (get_theme_mod('has_product_single_meta', 'yes') === 'yes') {
-			woocommerce_template_single_meta();
-		}
-	},
+	'blocksy_output_single_product_meta',
 	39
 );
+
+function blocksy_output_single_product_meta() {
+	if (get_theme_mod('has_product_single_meta', 'yes') === 'yes') {
+		woocommerce_template_single_meta();
+	}
+}
 
 add_action(
 	'woocommerce_single_product_summary',
@@ -162,7 +164,6 @@ add_action(
 if (! function_exists('blocksy_woo_single_product_after_main_content')) {
 	function blocksy_woo_single_product_after_main_content() {
 		if (is_product()) {
-
 			if (blocksy_some_device(
 				get_theme_mod(
 					'upsell_products_visibility',

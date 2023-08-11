@@ -3,6 +3,16 @@
 add_action(
 	'enqueue_block_editor_assets',
 	function () {
+		$m = new Blocksy_Fonts_Manager();
+		$maybe_google_fonts_url = $m->load_editor_fonts();
+
+		if (! empty($maybe_google_fonts_url)) {
+			wp_add_inline_style(
+				'wp-edit-blocks',
+				"@import url('" . $maybe_google_fonts_url . "');\n"
+			);
+		}
+
 		if (get_current_screen()->base === 'widgets') {
 			return;
 		}
@@ -46,6 +56,23 @@ add_action(
 			[],
 			$theme->get('Version')
 		);
+
+		if (get_current_screen()->base === 'post') {
+			wp_enqueue_style(
+				'ct-main-editor-iframe-styles',
+				get_template_directory_uri() . '/static/bundle/editor-iframe.min.css',
+				[],
+				$theme->get('Version')
+			);
+
+			wp_add_inline_style(
+				'ct-main-editor-styles',
+				blocksy_manager()->dynamic_css->load_backend_dynamic_css([
+					'echo' => false,
+					'filename' => 'admin/editor-top-level'
+				])
+			);
+		}
 
 		if (is_rtl()) {
 			wp_enqueue_style(
@@ -171,6 +198,17 @@ add_action(
 				])
 			),
 
+			'default_content_boxed_border' => get_theme_mod(
+				$prefix . '_content_boxed_border',
+				[
+					'width' => 1,
+					'style' => 'none',
+					'color' => [
+						'color' => 'rgba(44,62,80,0.2)',
+					],
+				]
+			),
+
 			'default_content_boxed_shadow' => get_theme_mod(
 				$prefix . '_content_boxed_shadow',
 				blocksy_box_shadow_value([
@@ -202,88 +240,6 @@ add_action(
 	}
 );
 
-add_filter(
-	'admin_body_class',
-	function ($classes) {
-		global $post;
-
-		$current_screen = get_current_screen();
-
-		if (
-			! $post
-			||
-			! $current_screen->is_block_editor()
-			||
-			get_current_screen()->base === 'widgets'
-		) {
-			return $classes;
-		}
-
-		$page_structure = blocksy_default_akg(
-			'page_structure_type',
-			blocksy_get_post_options($post->ID),
-			'default'
-		);
-
-		if ($page_structure === 'default') {
-			$post_type = get_current_screen()->post_type;
-			$maybe_cpt = blocksy_manager()
-				->post_types
-				->is_supported_post_type();
-
-			if ($maybe_cpt) {
-				$post_type = $maybe_cpt;
-			}
-
-			$prefix = blocksy_manager()->screen->get_admin_prefix($post_type);
-
-			$page_structure = get_theme_mod(
-				$prefix . '_structure',
-				($prefix === 'single_blog_post') ? 'type-3' : 'type-4'
-			);
-		}
-
-		$class = 'narrow';
-
-		if ($page_structure === 'type-4') {
-			$class = 'normal';
-		}
-
-		$class = 'ct-structure-' . $class;
-
-		if (get_post_type($post) === 'ct_content_block') {
-			$atts = blocksy_get_post_options($post->ID);
-			$template_type = get_post_meta($post->ID, 'template_type', true);
-
-			if (blocksy_default_akg(
-				'has_content_block_structure',
-				$atts,
-				$template_type === 'hook' ? 'no' : 'yes'
-			)) {
-				$page_structure = blocksy_default_akg(
-					'content_block_structure',
-					$atts,
-					'type-4'
-				);
-
-				$class = 'narrow';
-
-				if ($page_structure === 'type-4') {
-					$class = 'normal';
-				}
-
-				$class = 'ct-structure-' . $class;
-			} else {
-				$class = '';
-			}
-		}
-
-		$classes .= ' ' . $class;
-
-		return $classes;
-	}
-);
-
 add_filter('tiny_mce_before_init', function ($mceInit) {
 	if (! isset($mceInit['content_css'])) {
 		return $mceInit;
@@ -306,69 +262,18 @@ add_filter('tiny_mce_before_init', function ($mceInit) {
 	return $mceInit;
 });
 
-add_filter(
-	'pre_http_request',
-	function ($response, $parsed_args, $url) {
-		if ('https://blocksy-block-editor-customizer-styles' !== $url) {
-			return $response;
-		}
-
-		$css = new Blocksy_Css_Injector();
-		$tablet_css = new Blocksy_Css_Injector();
-		$mobile_css = new Blocksy_Css_Injector();
-
-		do_action(
-			'blocksy:admin-dynamic-css:enqueue',
-			[
-				'context' => 'inline',
-				'css' => $css,
-				'tablet_css' => $tablet_css,
-				'mobile_css' => $mobile_css
-			]
+add_action(
+	'block_editor_settings_all',
+	function($settings) {
+		$settings['styles'][] = array(
+			'css' => blocksy_manager()->dynamic_css->load_backend_dynamic_css([
+				'echo' => false
+			]),
+			'__unstableType' => 'theme',
+			'source' => 'blocksy'
 		);
 
-		blocksy_theme_get_dynamic_styles([
-			'name' => 'admin-global',
-			'css' => $css,
-			'tablet_css' => $tablet_css,
-			'mobile_css' => $mobile_css,
-			'context' => 'inline',
-			'chunk' => 'admin',
-			'selector' => 'htmlroot'
-		]);
-
-		$all_global_css = trim($css->build_css_structure());
-		$all_tablet_css = trim($tablet_css->build_css_structure());
-		$all_mobile_css = trim($mobile_css->build_css_structure());
-
-		if (empty($all_global_css)) {
-			return;
-		}
-
-		$css = $all_global_css;
-
-		if (! empty($all_tablet_css)) {
-			$css .= "\n@media (max-width: 800px) {\n";
-			$css .= $all_tablet_css;
-			$css .= "}\n";
-		}
-
-		if (! empty($all_mobile_css)) {
-			$css .= "\n@media (max-width: 370px) {\n";
-			$css .= $all_mobile_css;
-			$css .= "}\n";
-		}
-
-		return [
-			'body' => $css,
-			'headers' => [],
-			'response' => [
-				'code' => 200,
-				'message' => 'OK',
-			],
-			'cookies' => [],
-			'filename' => null,
-		];
-	},
-	10, 3
+		return $settings;
+	}
 );
+

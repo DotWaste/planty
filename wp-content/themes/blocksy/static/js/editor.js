@@ -1,8 +1,6 @@
 import {
 	createElement,
 	Fragment,
-	Component,
-	useCallback,
 	useRef,
 	useEffect,
 	useState,
@@ -12,7 +10,7 @@ import { PluginSidebar, PluginSidebarMoreMenuItem } from '@wordpress/edit-post'
 import { withSelect, withDispatch } from '@wordpress/data'
 import { compose } from '@wordpress/compose'
 import { IconButton, Button } from '@wordpress/components'
-import { handleMetaboxValueChange, mountSync } from './editor/sync'
+import { handleMetaboxValueChange } from './editor/sync'
 
 import ctEvents from 'ct-events'
 

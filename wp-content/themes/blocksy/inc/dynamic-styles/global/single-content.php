@@ -105,7 +105,7 @@ if (blocksy_some_device($has_boxed, 'boxed')) {
 		'tablet_css' => $tablet_css,
 		'mobile_css' => $mobile_css,
 		'selector' => blocksy_prefix_selector($selector, $prefix),
-		'property' => 'border-radius',
+		'property' => 'boxed-content-border-radius',
 		'value' => blocksy_akg_or_customizer(
 			'content_boxed_radius',
 			$source,

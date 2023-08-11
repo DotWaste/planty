@@ -9,6 +9,7 @@ form.woocommerce-checkout {
 		grid-template-columns: repeat(2, 1fr);
 		grid-column-gap: 35px;
 
+		> .woocommerce-error,
 		> .woocommerce-NoticeGroup {
 			grid-column: 1/-1;
 		}

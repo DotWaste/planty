@@ -31,6 +31,11 @@ add_action('woocommerce_before_checkout_form', function () {
 		global $ct_skip_checkout;
 		$ct_skip_checkout = true;
 	});
+
+	if (function_exists('wcmultichecout_woocommerce_locate_template')) {
+		global $ct_skip_checkout;
+		$ct_skip_checkout = true;
+	}
 }, 10, 1);
 
 add_action('wpfunnels/before_gb_checkout_form', function($widget) {

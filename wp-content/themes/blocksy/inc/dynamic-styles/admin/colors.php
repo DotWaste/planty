@@ -4,6 +4,10 @@ if (! isset($selector)) {
     $selector = ':root';
 }
 
+if (! isset($only_palette)) {
+    $only_palette = false;
+}
+
 // Color palette
 $colorPalette = blocksy_get_colors(
 	get_theme_mod('colorPalette'),
@@ -59,6 +63,9 @@ $css->put(
 	"--paletteColor8: {$colorPalette['color8']}"
 );
 
+if ($only_palette) {
+	return;
+}
 
 // body font color
 blocksy_output_colors([

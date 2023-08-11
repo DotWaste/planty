@@ -158,7 +158,11 @@ $options = [
 			'title' => __('Design', 'blocksy'),
 			'type' => 'tab',
 			'options' => [
-				blocksy_get_options('single-elements/structure-design')
+				blocksy_get_options('single-elements/structure-design', [
+					'options_conditions' => [
+						'content_style_source' => 'custom'
+					]
+				])
 			],
 		],
 

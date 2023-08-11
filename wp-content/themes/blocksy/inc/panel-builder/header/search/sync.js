@@ -232,6 +232,26 @@ ctEvents.on(
 				},
 			],
 
+			searchHeaderInputBorderColor: [
+				{
+					selector: assembleSelector(
+						`${getRootSelectorFor({ itemId })[0]} #search-modal input`
+					),
+					variable: 'form-field-border-initial-color',
+					type: 'color:default',
+					responsive: true,
+				},
+
+				{
+					selector: assembleSelector(
+						`${getRootSelectorFor({ itemId })[0]} #search-modal input`
+					),
+					variable: 'form-field-border-focus-color',
+					type: 'color:focus',
+					responsive: true,
+				},
+			],
+
 			search_button_icon_color: [
 				{
 					selector: assembleSelector(

@@ -142,6 +142,10 @@ if ($prefix === 'courses_single' && function_exists('tutor')) {
 	);
 }
 
+if (empty(trim($elements))) {
+	return;
+}
+
 ?>
 
 <div <?php echo blocksy_attr_to_html($attr) ?>>
