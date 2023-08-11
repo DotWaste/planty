@@ -13,128 +13,24 @@ body * {
     padding-bottom: 0;
 }
 
-/*header*/
+/*HEADER*/
+/*Style lien Commande des deux menus*/
 .menu-item-827,
 .menu-item-1052 {
     background-color: #DC9F96;    
 }
-
 .menu-item-1052 a,
 .menu-item-827 a{
     color: white!important;
 }
 
-/*HOME*/
-.div-title {
-    font-size: 30px;
-    font-weight: bold;
-    fill: #3B8E46;
-}
-
-.gouts-gallery {
-    display: block;
-    columns: 2;
-    row-gap: 40px;
-    padding-inline: 40px;
-}
-
-.ct-container-full {
-    bottom: 0;
-}
-
-.gouts {
-    height: 263px;
-    width: 394px;
-    margin-inline: 40px;
-}
-
-.gouts a{
-    
-}
-
-.avis {
-    position: absolute;
-    bottom: 0;
-}
-
-/*IMAGES*/
-.p-img a{
-    text-decoration: none;
-    font-family: 'Syne';
-    justify-self: center;
-    text-align: center;
-    text-transform: uppercase;
-    color: #ffffff!important;   
-}
-
-figure {
-    text-align: center;
-    justify-content: center;
-}
-figcaption {
-    align-self: center;
-    justify-self:center;
-}
-
-.cont {
-    position: relative;
-    max-width: 1440px;
-    margin: auto;
-}
-
-.cont-bottom {
-    position:absolute;
-    bottom: 0;
-    max-width: 1440px;
-    left: 0;
-    right: 0;
-    z-index: -5;
-}
-
-.cont-contact {
-    height: 185px;
-    width: 178px;
-    position: absolute;
-    left: 25%;
-    bottom: 0;
-    z-index: -5;
-}
-
-.curve-svg {
-    align-self: center;
-    position: absolute;
-    bottom: 0;
-    width:100%;
-    z-index: -5;
-}
-
-.svg-content {
-    margin-bottom: -50px!important;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.svg-content p {
-    max-width:500px;
-    margin: auto;
-}
-
-.feuille {
-    position: absolute;
-    max-width: 192px;
-    max-height: 220px;
-    right: 58px;
-    z-index: -4;
-    bottom:7px;
-}
 /*FOOTER*/ 
+/*Fond des canettes de pied de page*/
 .ftr-bg {
     text-align: center;
     align-self:center;
     width: 100%;
 }
-
 .page-id-678 #ftr-img {
     background-color: #ffffff;
     text-align: center;
@@ -143,10 +39,6 @@ figcaption {
 
 .page-id-796 #ftr-img {
     display: none;
-}
-
-.ftr-img {
-    background-color: none;
 }
 
 /*FORMULAIRE COMMANDE*/
@@ -187,32 +79,10 @@ figcaption {
     height:70px!important;
     background-color: white;
 }
-
-/*CONTACT*/
-.formulaire {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-}
-
-
-
-
-#nom,
-#prenom,
-#email,
-#adresse,
-#code-postal,
-#ville {
-    background-color: #ffffff;
-}
-
+/*Séparation des deux colonnes*/
 #html-12 {
     max-width:5px!important;
 }
-
 .separation {
     display: flex; 
     flex-direction: row;
@@ -223,28 +93,16 @@ figcaption {
     overflow: visible;
 }
 
+/*CONTACT*/
+.formulaire {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
 .titre-form {
     color: #ffffff;
     text-align: left;
     font-size: 30px;
-}
-
-.commander{
-    margin-top: 25px;
-    background-color: #E0B9B4;  
-}
-
-/*FORMULAIRE DE CONTACT*/
-.profiles {
-    image: url(file:///C:\MAMP\htdocs\planty\wp-content\uploads\2023\07/background.svg);
-}
-
-.contact {
-    margin: 33%;
-    width: 50%;
-}
-
-.bouton-envoi {
-	margin-left: 50%;
-	margin-right: 50%;
 }
