@@ -24,7 +24,7 @@ do_action('blocksy:content:bottom');
 			<div class="ct-container-fluid" data-columns-divider="md:sm" >
 				<div data-column="copyright" >
 					<div class="ct-footer-copyright" data-id="copyright" >
-						<p>Mentions légales</p>
+						<p><a href="#">Mentions légales</a></p>
 					</div>
 				</div>
 			</div>
