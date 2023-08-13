@@ -67,6 +67,11 @@ body * {
     border-radius: 5px;
     text-align: center;
 }
+.ok-btn a {
+    color: white;
+    height: 70px;
+    width: 70px;
+}
 /*Titre de la section du formulaire*/
 .titre-col-order{
     color: #ffffff;
