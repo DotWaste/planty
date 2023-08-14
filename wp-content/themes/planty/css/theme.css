@@ -69,7 +69,6 @@ body * {
 }
 .ok-btn:active {
     background-color: #C02E44;
-    border: 1px solid #E0B9B4;
 }
 /*Titre de la section du formulaire*/
 .titre-col-order{
